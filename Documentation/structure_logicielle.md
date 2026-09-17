@@ -33,11 +33,5 @@ RickLab/
 | `Script/arduino.py`     | Communication avec le matériel Arduino                       |
 | `Documentation/`        | Schémas, bibliothèques et composants utilisés                |
 
-## Flux général
 
-1. L'utilisateur écrit une idée dans le formulaire (`html.html`)
-2. Le formulaire envoie les données au serveur Flask (`python.py`)
-3. `python.py` transmet les données à `ia.py` pour analyse
-4. Le résultat est renvoyé et affiché côté frontend
-5. `arduino.py` gère les interactions avec le matériel physique
 
