@@ -1,2 +1,4 @@
 ## Architecture du projet 
-<img width="750" height="474" alt="image" src="https://github.com/user-attachments/assets/af9bd3f3-6eb6-41f2-b1a3-7c2c8e58a8e2" />
+<img width="750" height="474" alt="Capture d&#39;écran 2026-09-17 135105" src="https://github.com/user-attachments/assets/ae5ebddc-7e4e-4691-a0f5-58125fb5bf8b" />
+
+
