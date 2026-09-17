@@ -1,0 +1,84 @@
+/* police */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+.logo{
+   width: 70px;
+   height: 70px;
+   border:solid;
+   border-radius:50%;
+}
+h2 {
+   color:rgb(25, 168, 228);
+    font-family: "Science Gothic", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "CTRS" 0;
+}
+#intro{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+a {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #15bc09 !important;
+}
+#header {
+   background-color: #000000 !important;
+}
+
+.message{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.bouton{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+input{
+   field-sizing: content;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+
+    background-image: url("background_img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* #header{
+   background-image: url(blob:https://gemini.google.com/d744bde0-5b1f-4c43-a901-42d7fa4850dd);
+   background-repeat: no-repeat;
+   background-position:center;
+   background-attachment :fixed;
+   background-size: cover;
+}   */
+
+nav{
+   background-color: red;
+   color:green;
+}

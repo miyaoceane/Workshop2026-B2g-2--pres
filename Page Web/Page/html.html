@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+   <nav id ="header"class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      
+      <a id="ricklab" class="navbar-brand text-success" href="#">RickLab</a>
+
+      <div class="d-flex align-items-center gap-3">
+        <a class="nav-link" href="#"><img class="logo" src="https://i.pinimg.com/originals/8a/84/4a/8a844a260fa334699d8b1b727bf6c5d9.png" alt="..."></a>
+      </div>
+
+    </div>
+   </nav>
+  </header>
+
+  <br>
+  <br>
+  <br>
+  <main>
+    <div id="intro">
+     <h2>De nouvelles idées? N'hésite pas!</h2>
+    </div>
+      <br>
+      <br>
+      <br>
+     <form action="/analyser" method="POST">
+
+     <div class="message"> 
+      <label for="demande"></label>
+       <input type="text" id="text" name="text"
+              value="" required> 
+     </div>
+     
+     <br>
+     <br>
+
+     <div class="bouton">
+     <button type="submit" class="btn btn-outline-info" >Lancer l'annalyse</button>
+     </div>
+
+     </form>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  
+</body>
+</html>
