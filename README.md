@@ -24,6 +24,7 @@ Rick-Guard utilise différents capteurs afin de détecter plusieurs situations p
 - Détection de flamme
 - Détection de gaz toxiques
 - Détection de mouvement
+- Capteur ultrason
 
 Lorsqu'un danger est détecté, le système peut alerter Rick afin de le prévenir de la situation.
 
@@ -57,7 +58,6 @@ Valide    Pas valide
 |---|---|
 | Montage électronique | Arduino |
 | Programmation Arduino | Arduino IDE 2.3.10 |
-| Conception 3D | Fusion 360 |
 | Fabrication de la boîte | Découpe au laser |
 | Intelligence artificielle | Ollama + Llama 3.1 |
 
@@ -177,6 +177,9 @@ Ces tests confirment que le système détecte correctement les dangers physiques
 
 
 ## Membre de l'équipe et répartition des tâches:
+Maimouna: Câblage, intégration des capteurs/actionneurs, programmation Arduino et logique des alertes
+Océane: Développement de l'interface web, gestion du dépôt Git, organisation des fichiers du projet.
+Lancinet: Assemblage du châssis, câblage du module L298N, mise en route moteur et création du support Canva.
 
 
 ## Licence 
