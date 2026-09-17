@@ -41,7 +41,3 @@ RickLab/
 4. Le résultat est renvoyé et affiché côté frontend
 5. `arduino.py` gère les interactions avec le matériel physique
 
-## Améliorations à prévoir
-
-- Ajouter un `requirements.txt` pour les dépendances Python
-- Uniformiser les noms de dossiers (éviter les espaces)
