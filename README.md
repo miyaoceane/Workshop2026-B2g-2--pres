@@ -1,15 +1,15 @@
 # Rick-Guard
 
-##  Contexte du Projet
+## Contexte du Projet
 Ce projet consiste à concevoir un prototype technologique dans l'univers de Rick et Morty capable:
-- d’aider Rick et Morty dans leurs aventures, 
-- d’automatiser des tâches, de fabriquer des objets connectés, 
-- d’améliorer le quotidien du garage de Rick grâce à des inventions inutiles mais brillantes, 
+- d'aider Rick et Morty dans leurs aventures, 
+- d'automatiser des tâches, de fabriquer des objets connectés, 
+- d'améliorer le quotidien du garage de Rick grâce à des inventions inutiles mais brillantes, 
 - de créer des objets hybrides mélangeant électronique, IA et fabrication numérique
 
-  L'objectif principal est d’expérimenter, de prendre des risques, d’essayer de nouvelles technologies, de sortir de votre zone de confort, et de proposer un prototype fun, ambitieux ou créatif.
+L'objectif principal est d'expérimenter, de prendre des risques, d'essayer de nouvelles technologies, de sortir de votre zone de confort, et de proposer un prototype fun, ambitieux ou créatif.
 
-##  Présentation du Projet
+## Présentation du Projet
 
 **Rick-Guard** est un prototype de système intelligent conçu pour détecter et signaler différents types de dangers pouvant se présenter dans l'environnement de Rick.
 
@@ -21,9 +21,9 @@ Le système combine plusieurs capteurs avec une interface web et une fonctionnal
 
 Rick-Guard utilise différents capteurs afin de détecter plusieurs situations potentiellement dangereuses :
 
--  Détection de flamme
--  Détection de gaz toxiques
--  Détection de mouvement
+- Détection de flamme
+- Détection de gaz toxiques
+- Détection de mouvement
 
 Lorsqu'un danger est détecté, le système peut alerter Rick afin de le prévenir de la situation.
 
@@ -50,41 +50,58 @@ Analyse intelligente
     ↓        ↓
 Valide    Pas valide
 ```
-##  Stack technique
+
+## Stack technique
 
 | Domaine | Technologie / Outil |
 |---|---|
-|  Montage électronique | Arduino |
-|  Programmation Arduino | Arduino IDE |
-|  Conception 3D | Fusion 360 |
-|  Fabrication | Impression 3D |
-|  Intelligence artificielle | Ollama + Llama 3.1 |
+| Montage électronique | Arduino |
+| Programmation Arduino | Arduino IDE 2.3.10 |
+| Conception 3D | Fusion 360 |
+| Fabrication de la boîte | Découpe au laser |
+| Intelligence artificielle | Ollama + Llama 3.1 |
 
-##  Ollama 
+## Installations
 
-### Installation
+### Arduino IDE 2.3.10
+
+Téléchargement possible depuis le site https://www.arduino.cc/en/software/
+
+#### Communication entre Arduino IDE et le programme python
+
+Installation :
+```bash
+pip install pyserial
+```
+
+Import :
+```python
+import serial
+```
+
+### Ollama
 
 Sur Linux/macOS:
-```
+```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 Sur Windows: télécharge l'installeur depuis le site ollama.com/download.
 
-### Lancement du modèle Llama 
+#### Lancement du modèle Llama
 
-```
+```bash
 ollama run llama3.1
 ```
 
-### Utilisation d'Ollama avec python 
+#### Utilisation d'Ollama avec python
 
-Dans le terminal :
-```
+```bash
 pip install ollama
 ```
 
-### Exemple d'utilisation (extrait du codeà
-```
+#### Exemple d'utilisation (extrait du code)
+
+```python
 from ollama import chat
 from ollama import ChatResponse
 
@@ -118,13 +135,11 @@ DEMANDE :
 
     return response['message']['content'].strip()
 ```
+##Lancement du projet complet
+
+
 ## Amélioration à Faire
 
 
 
 ## Membre de l'équipe et répartition des tâches:
-
-  
-  
-  
-
