@@ -135,11 +135,49 @@ DEMANDE :
 
     return response['message']['content'].strip()
 ```
-##Lancement du projet complet
+## Guide d'utilisation pour le lancement  
+
+1. Connecter la carte Arduino à l'ordinateur via le câble USB
+2. Ouvrir le code Arduino dans l'IDE et le téléverser sur la carte
+3. Fermer le moniteur série de l'Arduino IDE (le port USB doit être libre pour que Python puisse l'utiliser)
+4. Lancer le script `python.py` pour démarrer le programme
+
+   
+## Tests effectués
+
+Le prototype a été testé dans son ensemble, capteurs et interface web comprises.
+
+### Détection des dangers
+
+| Test | Capteur déclenché | Résultat |
+|---|---|---|
+| Passage de la main devant le prototype | Capteur de mouvement | LED passée au rouge |
+| Mise en marche de la découpe laser (dégagement d'odeur) | Capteur de gaz | LED passée au rouge |
+| Agitation rapide d'un papier devant le prototype | Capteur ultrason | LED passée au rouge + buzzer activé |
+
+### Analyse intelligente (interface web → Ollama)
+
+Plusieurs demandes ont été envoyées depuis l'interface web pour tester l'analyseur intelligent, avec affichage du résultat sur l'écran LCD Arduino :
+
+| Demande envoyée | Résultat affiché |
+|---|---|
+| "Je veux faire du thé" | VALIDE |
+| "Je veux faire une expérience avec du propan-2-ol mais je n'ai pas mes gants" | NON VALIDE |
+| "Je veux affronter le docteur Malus" | NON VALIDE |
+
+Ces tests confirment que le système détecte correctement les dangers physiques (flamme, gaz, mouvement) et que l'analyseur intelligent distingue bien les demandes sûres des demandes risquées.
 
 
 ## Amélioration à Faire
 
+- Ajouter la synthèse vocale pour que l'IA puisse répondre à l'oral (texte → son)
+- Ajouter la reconnaissance vocale pour que l'utilisateur puisse parler directement à la machine (fonctionnalité tentée mais non aboutie lors de ce projet)
+- Améliorer la rapidité de réponse de l'analyseur intelligent
+- Rendre l'interface web plus dynamique
 
 
 ## Membre de l'équipe et répartition des tâches:
+
+
+## Licence 
+Workshop - EPSI - 2026-2027
