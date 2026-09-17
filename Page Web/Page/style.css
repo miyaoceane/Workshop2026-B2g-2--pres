@@ -7,8 +7,12 @@
    border:solid;
    border-radius:50%;
 }
+#intro {
+    text-align: center;
+}
+
 h2 {
-   color:rgb(25, 168, 228);
+    color: #15bc09 !important;
     font-family: "Science Gothic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
@@ -18,11 +22,22 @@ h2 {
     "wdth" 100,
     "CTRS" 0;
 }
-#intro{
-   display: flex;
-   justify-content: center;
-   align-items: center;
+textarea{
+    width: 500px;
+    min-height: 50px;
+    max-height: 200px;
+    padding: 15px;
+    border: 2px solid #15bc09;
+    border-radius: 25px;
+    background-color: #111;
+    color: white;
+    font-size: 16px;
+    resize: vertical;
 }
+textarea:focus {
+    outline: none;
+}
+
 a {
     font-family: "Bungee Tint", sans-serif;
     font-weight: 400;
@@ -33,21 +48,6 @@ a {
    background-color: #000000 !important;
 }
 
-.message{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.bouton{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-input{
-   field-sizing: content;
-}
 body {
     position: relative;
     min-height: 100vh;
@@ -69,6 +69,16 @@ body::before {
     filter: blur(8px);
     z-index: -1;
 }
+.analyse{
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+}
+.bouton{
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+}
 
 /* #header{
    background-image: url(blob:https://gemini.google.com/d744bde0-5b1f-4c43-a901-42d7fa4850dd);
@@ -78,7 +88,3 @@ body::before {
    background-size: cover;
 }   */
 
-nav{
-   background-color: red;
-   color:green;
-}

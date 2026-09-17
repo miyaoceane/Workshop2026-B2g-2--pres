@@ -20,6 +20,5 @@ def traiter():
     resultat = analyser(text)
     
     # arduino.write((resultat + "\n").encode())
-    return resultat
-
+    return 'Voir le résultat de l\'analyse'
 app.run(debug=False)
