@@ -1,1 +1,0 @@
-  # arduino.write((resultat + "\n").encode())
