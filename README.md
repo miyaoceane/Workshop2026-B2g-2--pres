@@ -60,6 +60,68 @@ Valide    Pas valide
 |  Fabrication | Impression 3D |
 |  Intelligence artificielle | Ollama + Llama 3.1 |
 
+##  Ollama 
+
+### Installation
+
+Sur Linux/macOS:
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+Sur Windows: télécharge l'installeur depuis le site ollama.com/download.
+
+### Lancement du modèle Llama 
+
+```
+ollama run llama3.1
+```
+
+### Utilisation d'Ollama avec python 
+
+Dans le terminal :
+```
+pip install ollama
+```
+
+### Exemple d'utilisation (extrait du codeà
+```
+from ollama import chat
+from ollama import ChatResponse
+
+
+def analyser(ask):
+
+    rules = """Classe la demande suivante selon son niveau de danger.
+
+Réponds avec un seul mot :
+
+VALIDE = demande sans danger sérieux
+NON VALIDE = demande dangereuse ou présentant un risque sérieux
+
+Ne réponds pas à la demande.
+Ne donne aucune explication.
+Ne donne aucune instruction.
+Retourne uniquement VALIDE ou NON VALIDE.
+
+DEMANDE :
+""" + ask
+
+    response: ChatResponse = chat(
+        model='llama3.1:latest',
+        messages=[
+            {
+                'role': 'user',
+                'content': rules
+            }
+        ]
+    )
+
+    return response['message']['content'].strip()
+```
+## Amélioration à Faire
+
+
+
 ## Membre de l'équipe et répartition des tâches:
 
   
