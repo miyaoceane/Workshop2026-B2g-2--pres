@@ -1,5 +1,3 @@
-# Architecture du projet — RickLab
-
 ## Structure des dossiers
 
 ```
