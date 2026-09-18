@@ -3,22 +3,29 @@ from ia import analyser
 import serial #arduino
 import time
 
+# Création de l'instance de l'application Web Flask
 app = Flask(__name__,
             template_folder="../Page",
             static_folder="../Page")
 
-# arduino = serial.Serial("COM5", 9600)
-# time.sleep(2)
+# Connection avec le port COM5
+arduino = serial.Serial("COM5", 9600)
+time.sleep(2)
 
-@app.route("/")
+"""    AFFICHAGE DE LA PAGE HTML   """
+
+@app.route("/") # Création de la premiere route 
 def accueil():
     return render_template("html.html")
 
-@app.route("/analyser",methods=["POST"])
+"""   TRAITEMENT DU TEXTE RÉCUPÉRÉ DANS LA ZONE DE TEXTE   """
+
+@app.route("/analyser",methods=["POST"]) # Création de la route pour l'analyse et on accepte que les requêtes du type POST
 def traiter():
-    text = request.form["text"]
+    text = request.form["text"] # récupération du texte 
     resultat = analyser(text)
     
-    # arduino.write((resultat + "\n").encode())
+    arduino.write((resultat + "\n").encode()) # Envoie la réponse à Arduino
     return 'Voir le résultat de l\'analyse'
-app.run(debug=False)
+
+app.run(debug=False) # Faire tourner l'app Flask

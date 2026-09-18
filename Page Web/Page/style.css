@@ -1,12 +1,14 @@
-/* police */
+/* Import de la police avec google fonnt  */
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
 .logo{
    width: 70px;
    height: 70px;
    border:solid;
    border-radius:50%;
 }
+
 #intro {
     text-align: center;
 }
@@ -22,10 +24,11 @@ h2 {
     "wdth" 100,
     "CTRS" 0;
 }
+
 textarea{
-    width: 500px;
-    min-height: 50px;
-    max-height: 200px;
+    width: 700px;
+    min-height: 100px;
+    max-height: 700px;
     padding: 15px;
     border: 2px solid #15bc09;
     border-radius: 25px;
@@ -34,6 +37,7 @@ textarea{
     font-size: 16px;
     resize: vertical;
 }
+
 textarea:focus {
     outline: none;
 }
@@ -44,6 +48,7 @@ a {
     font-style: normal;
     color: #15bc09 !important;
 }
+
 #header {
    background-color: #000000 !important;
 }
@@ -69,22 +74,18 @@ body::before {
     filter: blur(8px);
     z-index: -1;
 }
+
 .analyse{
-   display: flex !important;
+   display: flex !important;  
+   /* !important présent car bootstrap bloque certaines modification*/
    justify-content: center !important;
    align-items: center !important;
 }
+
 .bouton{
    display: flex !important;
    justify-content: center !important;
    align-items: center !important;
 }
 
-/* #header{
-   background-image: url(blob:https://gemini.google.com/d744bde0-5b1f-4c43-a901-42d7fa4850dd);
-   background-repeat: no-repeat;
-   background-position:center;
-   background-attachment :fixed;
-   background-size: cover;
-}   */
 

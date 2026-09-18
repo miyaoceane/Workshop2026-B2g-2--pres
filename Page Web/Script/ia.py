@@ -1,9 +1,12 @@
+""" ON IMPORTE OLLAMA """
+
 from ollama import chat
 from ollama import ChatResponse
 
 
 def analyser(ask):
 
+#On envoie une conisgne précise à l'IA pour éviter des réponses non attendu
     rules = """Classe la demande suivante selon son niveau de danger.
 
 Réponds avec un seul mot :
