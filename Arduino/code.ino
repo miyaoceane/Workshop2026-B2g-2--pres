@@ -220,4 +220,4 @@ void declencherBuzzer(int delai) {
   delay(delai);
   digitalWrite(pinBuzzer, HIGH); // ÉTAT INVERSÉ : HIGH l'éteint
   delay(delai);
-}
+
