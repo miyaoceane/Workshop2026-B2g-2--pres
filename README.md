@@ -177,9 +177,9 @@ Ces tests confirment que le système détecte correctement les dangers physiques
 
 
 ## Membre de l'équipe et répartition des tâches:
--Maimouna: Câblage, intégration des capteurs/actionneurs, programmation Arduino et logique des alertes
--Océane: Développement de l'interface web, gestion du dépôt Git, organisation des fichiers du projet.
--Lancinet: Assemblage du châssis, câblage du module L298N, mise en route moteur et création du support Canva.
+- Maimouna: Câblage, intégration des capteurs/actionneurs, programmation Arduino et logique des alertes
+- Océane: Développement de l'interface web, gestion du dépôt Git, organisation des fichiers du projet.
+- Lancinet: Assemblage du châssis, câblage du module L298N, mise en route moteur et création du support Canva.
 
 
 ## Licence 
