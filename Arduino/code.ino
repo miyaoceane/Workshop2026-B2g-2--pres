@@ -17,9 +17,14 @@ Servo monServo;
 
 // --- CONFIGURATION DES BROCHES SÉCURISÉES POUR ARDUINO YÚN ---
 const int pinPIR = 1;      // Capteur mouvement (D1)
-const int ledRouge = 6;    // LED RGB Rouge (D6)
-const int ledVert = 5;     // LED RGB Vert (D5)
-const int ledBleu = 13;    // LED RGB Bleu (D13)
+// CORRECTIF LED : câblage physique en rotation (R->vu comme G, G->vu comme B).
+// Vérifie la couleur en mode STANDBY (case 0, censé être bleu) pour confirmer.
+// Si le mode veille apparaît rouge, la rotation ci-dessous est la bonne.
+// Si une couleur reste fausse après ce changement, reviens aux valeurs
+// d'origine (Rouge=6, Vert=5, Bleu=13) et dis-moi ce que tu observes.
+const int ledRouge = 6;   // LED RGB Rouge (D13)
+const int ledVert = 13;     // LED RGB Vert (D6)
+const int ledBleu = 5;     // LED RGB Bleu (D5)
 const int pinTrig = 9;     // Ultrason Trig (D9)
 const int pinEcho = 8;     // Ultrason Echo (D8)
 const int pinServo = 10;   // Servomoteur (D10)
@@ -101,18 +106,20 @@ void loop() {
   int distance = duree * 0.034 / 2;
 
   // 3. MACHINE D'ÉTAT (Hiérarchie des modes de sécurité)
-  int modeActuel = 0;
-  if (messagePython == "NON VALIDE") {
+    int modeActuel = 0;
+    if (messagePython == "NON VALIDE") {
     modeActuel = 4; // Priorité 1 : Mot interdit détecté depuis Python (analyse IA)
-  } else if (valeurGaz > SEUIL_GAZ) {
+    } else if (messagePython == "VALIDE") {
+    modeActuel = 5; // Nouvelle priorité : demande validée par l'IA
+    } else if (valeurGaz > SEUIL_GAZ) {
     modeActuel = 3; // Priorité 2 : Taux de gaz toxique critique
-  } else if (!mouvement) {
+    } else if (!mouvement) {
     modeActuel = 0; // Priorité 3 : Mode Veille (Laboratoire vide)
-  } else if (distance > 0 && distance < 20) {
+    } else if (distance > 0 && distance < 20) {
     modeActuel = 2; // Priorité 4 : Obstacle proche détecté par le scanner
-  } else {
+    } else {
     modeActuel = 1; // Mode Patrouille active nominale
-  }
+    }
 
   // Algorithme Anti-Freeze : Efface l'écran uniquement si le mode change
   if (modeActuel != modePrecedent) {
@@ -122,6 +129,17 @@ void loop() {
 
   // 4. EXÉCUTION DES PROTOCOLES ET DES MOUVEMENTS
   switch (modeActuel) {
+    case 5: // --- MODE DEMANDE VALIDÉE ---
+        stopRobot();
+        allumerLED(0, 255, 0); // Vert
+        lcd.setCursor(0, 0);
+        lcd.print("ACTION AUTORISEE");
+        lcd.setCursor(0, 1);
+        lcd.print(messagePython);
+        noTone(pinBuzzer);
+        delay(2000);
+        messagePython = ""; // CORRECTIF : on vide le message pour sortir du mode figé
+        break;
     case 4: // --- MODE DANGER LOGICIEL (ANALYSE PYTHON) ---
       stopRobot();
       allumerLED(255, 0, 0); // Rouge
@@ -131,6 +149,7 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print(messagePython);
       declencherBuzzer(400);
+      messagePython = ""; // CORRECTIF : on vide le message pour sortir du mode figé
       break;
 
     case 3: // --- MODE DANGER GAZ PHYSIQUE ---
@@ -220,4 +239,4 @@ void declencherBuzzer(int delai) {
   delay(delai);
   digitalWrite(pinBuzzer, HIGH); // ÉTAT INVERSÉ : HIGH l'éteint
   delay(delai);
-
+}
