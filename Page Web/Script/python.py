@@ -20,12 +20,14 @@ def accueil():
 
 """   TRAITEMENT DU TEXTE RÉCUPÉRÉ DANS LA ZONE DE TEXTE   """
 
-@app.route("/analyser",methods=["POST"]) # Création de la route pour l'analyse et on accepte que les requêtes du type POST
+@app.route("/analyser", methods=["POST"]) # Création de la route pour l'analyse et on accepte que les requêtes du type POST
 def traiter():
-    text = request.form["text"] # récupération du texte 
+    text = request.form["text"] # récupération du texte
     resultat = analyser(text)
-    
+
+    print("Résultat de l'analyse :", resultat) # affiche le résultat dans la console Python
+
     arduino.write((resultat + "\n").encode()) # Envoie la réponse à Arduino
-    return 'Voir le résultat de l\'analyse'
+    return resultat # renvoie le vrai résultat à la page web
 
 app.run(debug=False) # Faire tourner l'app Flask
